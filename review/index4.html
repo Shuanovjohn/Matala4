@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Beitar Jerusalem</title>
+
+  </head>
+
+  <body style="background-color:#ffff80;">
+
+  <h1> Beitar Jerusalem Football Club</h1>
+  <h2>Your place for ordering Beitar's merchandise</h2>
+
+  <form action="https://formspree.io/f/moqpkgzq" method="post">
+    <lable for="OrderNumber">Order Number </lable><br>
+    <input type="text" id="OrderNumber" name="OrderNumber" value="29760734" readonly><br>
+    <lable for="FirstName">First Name </lable><br>
+    <input type="text" id="FirstName" placeholder="Enter First Name" maxlength="20"><br>
+    <lable for="LasttName">Last Name </lable><br>
+    <input type="text" id="LasttName" placeholder="Enter Last Name" maxlength="20"><br>
+
+<button onclick="myFunction()">Click me</button>
+    <hr>
+    <lable for="Clothing" >Select Clothing: </lable><br>
+    <input type="radio" name="Clothing" onclick="totalIt()" value="10" checked="T-shirt" /> T-shirt  [10 nis]<br>
+    <input type="radio" name="Clothing" onclick="totalIt()" value="10"/> Undershirt  [10 nis]<br>
+    <input type="radio" name="Clothing" onclick="totalIt()" value="20"/> Sweater  [20 nis]<br>
+    <input type="radio" name="Clothing" onclick="totalIt()" value="30"/> Hoodie  [30 nis]<br>
+    <input type="radio" name="Clothing" onclick="totalIt()" value="50"/> Coat  [50 nis]<br>
+
+    <hr>
+    <label for="Color">Select Color:</label><br>
+    <select name="Color" id="Color">
+      <option name="Color" onclick="totalIt()" value="0">Red</option>
+      <option name="Color" onclick="totalIt()" value="5">Green</option>
+      <option name="Color" onclick="totalIt()" value="-2">Blue</option>
+      <option name="Color" onclick="totalIt()" value="0" selected="selected">White</option>
+    </select><br>
+
+    <hr>
+    <label for="Size">Choose Size:</label><br>
+    <input type="radio" name="Size" onclick="totalIt()" value="0.9"/> S<br>
+    <input type="radio" name="Size" onclick="totalIt()" value="1"/> M<br>
+    <input type="radio" name="Size" onclick="totalIt()" value="1"/> L<br>
+    <input type="radio" name="Size" onclick="totalIt()" value="1.1"/> XL<br>
+
+    <hr>
+    <label for="Location">Choose location for the Logo:</label><br>
+    <input type="checkbox" id="Back" name="Back" value="Back">
+    <label for="Back"> Back</label><br>
+    <input type="checkbox" id="Front" name="Front" value="Front">
+    <label for="Front"> Front</label><br>
+    <input type="checkbox" id="Right_arm" name="Right_arm" value="Right arm">
+    <label for="Right_arm"> Right arm</label><br>
+    <input type="checkbox" id="Left_arm" name="Left_arm" value="Left arm">
+    <label for="Left_arm"> Left arm</label><br>
+
+    <hr>
+    <lable for="Adress">Adress:</lable><br>
+    <textarea name="Adress" placeholder="Enter Adress" cols="30" rows="10"></textarea>
+
+    <hr>
+    <lable for="Amount">Enter Amount </lable>
+    <input type="text" id="Amount" name="Amount" value="1"><br>
+    <lable for="summary">Summary:</lable>
+    <input value="0.00" readonly="readonly" type="text" name="total" /><br>
+
+
+    <input type="button" name="Submit" value="Send Order"><br>
+    <input type="reset" value="Start from the Begining"><br>
+
+
+
+
+    <script type="text/javascript">
+    function totalIt() {
+      var input1 = document.getElementsByName("Clothing");
+      var input2 = document.getElementsByName("Color");
+      var input3 = document.getElementsByName("Size");
+      var multi = document.getElementById("Amount").value;
+      var total = 0;
+
+      for (var i = 0; i < input1.length; i++) {
+        if (input1[i].checked) { total += parseFloat(input1[i].value);  }
+      }
+      for (var i = 0; i < input2.length; i++) {
+        if (input2[i].selected) { total += parseFloat(input2[i].value);  }
+      }
+      for (var i = 0; i < input3.length; i++) {
+        if (input3[i].checked) { total *= parseFloat(input3[i].value);  }
+      }
+      total*= multi;
+
+      document.getElementsByName("total")[0].value = total + " nis";}
+    </script>
+  </form
+
+
+</body>
+</html>

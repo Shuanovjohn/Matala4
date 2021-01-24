@@ -1,0 +1,28 @@
+body{
+  font-family: Times;
+  background-color: #eeee;
+}
+
+h1{
+  text-align: center;
+  color: forestgreen;
+  margin: 30px 0 50px;
+}
+
+li{
+  font-size: 20px;
+}
+
+th{
+  font-size: 20px;
+}
+
+td {
+  height: 200px;
+  width: 50%;
+}
+
+div{
+  text-align: center;
+  font-size: 20px;
+}
